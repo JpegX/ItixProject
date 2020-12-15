@@ -1,0 +1,58 @@
+<ng-container *ngIf="!trocar">
+  <div class="cadastro">
+    <div class="conteudo-cadastro">
+      <form>
+        <div class="caixa-input">
+          <label for="email">E-mail:</label>
+          <input type="email" placeholder="Ex.: seuemail@email.com" id="email" />
+        </div>
+
+        <div class="caixa-input">
+          <label for="senha">Senha:</label>
+          <input type="password" placeholder="Ex.: 123" id="senha" />
+        </div>
+
+        <div class="caixa-input">
+          <label for="senha-confirmar">Confirmar senha:</label>
+          <input type="password" placeholder="Ex.: 123" id="senha-confirmar" />
+        </div>
+
+        <button type="button" class="botao-troca" (click)="funcaoTrocar()">Cadastrar</button>
+      </form>
+    </div>
+
+    <div class="futer">
+      <img src="../assets/img/homer.png" />
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="trocar">
+  <div class="entrar">
+    <div class="conteudo-cadastro">
+      <form>
+        <div class="caixa-input">
+          <label for="email">E-mail:</label>
+          <input type="email" placeholder="Ex.: seuemail@email.com" id="email" />
+        </div>
+
+        <div class="caixa-input">
+          <label for="senha">Senha:</label>
+          <input type="password" placeholder="Ex.: 123" id="senha" />
+        </div>
+
+        <button type="button" class="botao-troca" (click)="funcaoTrocar()">Logar</button>
+
+        <div class="botao">
+          <label>Não tem uma conta ?</label>
+          <button type="button" class="botao-cadastro" (click)="funcaoTrocarDnv()">
+            Crie uma!
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="futer">
+      <img src="../assets/img/homer.png" />
+    </div>
+  </div>
+</ng-container>
