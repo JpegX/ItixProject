@@ -1,3 +1,4 @@
+import { TemplateComponent } from './template/template.component';
 import { Component } from '@angular/core';
 
 @Component({

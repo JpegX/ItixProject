@@ -1,5 +1,6 @@
-import { FunctionCall } from '@angular/compiler';
+import { UserService } from './../BackEnd/services/user-service.service';
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-template',
@@ -8,35 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemplateComponent implements OnInit {
   senha = 'senhaboa';
+  formulario: FormGroup;
 
-  constructor() {}
+  constructor(private userService: UserService) {}
 
-  trocar: boolean = true;
+  estaLogando = true;
 
-  //usuarios = [];
-  ngOnInit(): void {}
+  ngOnInit() {
+    this.formulario = new FormGroup({
+      email: new FormControl(null, [Validators.required, Validators.email]),
+      senha: new FormControl(null, Validators.required),
+      senhaConfirmar: new FormControl(null, Validators.required)
+    });
+  }
 
-  funcaoTrocar = () => {
-    this.trocar = true;
-  };
-
-  funcaoTrocarDnv = () => {
-    this.trocar = false;
-  };
-
-  funcaoAlerta = senha => {
-    switch (senha) {
-      case 1:
-        console.log('Senha incorreta');
-        break;
-      case 2:
-        console.log('Confirmação de senha incorreta');
-        break;
-    }
-  };
+  TrocaBox() {
+    this.estaLogando = !this.estaLogando;
+  }
+  public validar() {}
 }
-
-/*cadastrar(usuario): void {//cadastrar serve como uma function
-
-    this.usuarios.push(usuario);//push adiciona ao array
-  }*/
