@@ -26,5 +26,13 @@ export class TemplateComponent implements OnInit {
   TrocaBox() {
     this.estaLogando = !this.estaLogando;
   }
-  public validar() {}
+  verificaValidTouched(campo) {
+    return !this.formulario.get(campo).valid && this.formulario.get(campo).touched;
+  }
+  aplicaCssErro(campo) {
+    return {
+      'has-error': this.verificaValidTouched(campo),
+      'has-feedback': this.verificaValidTouched(campo)
+    };
+  }
 }

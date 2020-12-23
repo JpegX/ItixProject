@@ -2,7 +2,7 @@
   <div class="cadastro">
     <div class="conteudo-cadastro">
       <form [formGroup]="formulario">
-        <div class="caixa-input">
+        <div class="caixa-input" [ngClass]="aplicaCssErro('email')">
           <label for="email">E-mail:</label>
           <input
             type="email"
@@ -27,7 +27,7 @@
           />
         </div>
 
-        <button type="button" class="botao-troca" (click)="validar()">Cadastrar</button>
+        <button type="button" class="botao-troca">Cadastrar</button>
         <div class="botao">
           <label>Já tem uma conta ?</label>
           <button
@@ -67,7 +67,7 @@
           <input type="password" formControlName="senha" placeholder="Ex.: 123" id="senha" />
         </div>
 
-        <button type="button" class="botao-troca" (click)="validar()">Logar</button>
+        <button type="button" class="botao-troca">Logar</button>
 
         <div class="botao">
           <label>Não tem uma conta ?</label>
